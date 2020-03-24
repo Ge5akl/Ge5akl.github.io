@@ -7,6 +7,7 @@ var OldResult = [];
 var result = new Object(); 
 var arr = [];
 write();
+
 if (process.argv[4]== "serve"){
     serve();
 }
@@ -63,11 +64,13 @@ function serve(){
       fsWait = setTimeout(() => fsWait = false, 1000);
       console.log("filechange"+filename);
       write();
+      var execProcess = require("./exec_process.js");
+      execProcess.result("git add -A", function(err, response){
+          if(!err){
+              console.log(response);
+          }else {
+              console.log(err);
+          }
+      });
     });
 }
-/*function publish(){
-    var spawn = require("child_process").spawn,child;
-    spawn("powershell.exe",["git add -A"]);
-    spawn("powershell.exe",["git commit -m"+"Edited"+process.argv[2]+"File"]);
-    spawn("git push");
-}*/
