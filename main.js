@@ -6,7 +6,7 @@ let i = 1;
 var OldResult = [];
 var result = new Object(); 
 var arr = [];
-gift = "git commit -m 'Some message'";
+gift = 'git commit -m "Some message"';
 write();
 if (process.argv[4]== "serve"){
     serve();
