@@ -11,28 +11,6 @@ write();
 if (process.argv[4]== "serve"){
     serve();
 }
-var execProcess = require("./exec_process.js");
-      execProcess.result("git add -A", function(err, response){
-          if(!err){
-              console.log(response);
-          }else {
-              console.log(err);
-          }
-      });
-      execProcess.result(gift, function(err, response){
-        if(!err){
-            console.log(response);
-        }else {
-            console.log(err);
-        }
-    });
-    execProcess.result("git push", function(err, response){
-        if(!err){
-            console.log(response);
-        }else {
-            console.log(err);
-        }
-    }); 
 function write(){
     OldResult = new Object();
     result = new Object();
@@ -86,5 +64,27 @@ function serve(){
       fsWait = setTimeout(() => fsWait = false, 1000);
       console.log("filechange"+filename);
       write();
+      var execProcess = require("./exec_process.js");
+      execProcess.result("git add -A", function(err, response){
+          if(!err){
+              console.log(response);
+          }else {
+              console.log(err);
+          }
+      });
+      execProcess.result(gift, function(err, response){
+        if(!err){
+            console.log(response);
+        }else {
+            console.log(err);
+        }
+    });
+    execProcess.result("git push", function(err, response){
+        if(!err){
+            console.log(response);
+        }else {
+            console.log(err);
+        }
+    }); 
     });
 }
