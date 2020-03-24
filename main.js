@@ -6,6 +6,7 @@ let i = 1;
 var OldResult = [];
 var result = new Object(); 
 var arr = [];
+gift = "git commit -m 'Some message'";
 write();
 if (process.argv[4]== "serve"){
     serve();
@@ -18,7 +19,7 @@ var execProcess = require("./exec_process.js");
               console.log(err);
           }
       });
-      execProcess.result('git commit -m "Some message"', function(err, response){
+      execProcess.result(gift, function(err, response){
         if(!err){
             console.log(response);
         }else {
@@ -85,4 +86,5 @@ function serve(){
       fsWait = setTimeout(() => fsWait = false, 1000);
       console.log("filechange"+filename);
       write();
+    });
 }
