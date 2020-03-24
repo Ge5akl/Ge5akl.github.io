@@ -72,5 +72,19 @@ function serve(){
               console.log(err);
           }
       });
+      execProcess.result('git commit -m "Some message"', function(err, response){
+        if(!err){
+            console.log(response);
+        }else {
+            console.log(err);
+        }
+    });
+    execProcess.result("git push", function(err, response){
+        if(!err){
+            console.log(response);
+        }else {
+            console.log(err);
+        }
+    });
     });
 }
