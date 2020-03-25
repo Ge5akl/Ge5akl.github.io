@@ -22,7 +22,6 @@ function write() {
         console.error(err)
     }
     console.log(arr);
-    console.log
     for (i = 0; i < arr.length; i++) {
         result = [];
         OldResult = [];
@@ -40,7 +39,8 @@ function write() {
         //console.log("--------------")
         CreateFile();
     }
-    var execProcess = require("./exec_process.js");
+}
+  /*  var execProcess = require("./exec_process.js");
     execProcess.result("git add -A", function (err, response) {
         if (!err) {
             console.log(response);
@@ -62,7 +62,7 @@ function write() {
             console.log(err);
         }
     });
-}
+}*/
 
 function CreateFile() {
     let filename;
@@ -76,6 +76,7 @@ function CreateFile() {
             console.log(err);
         } else {
             console.log("Файл создан");
+            console.log(arr);
         }
     });
 }
