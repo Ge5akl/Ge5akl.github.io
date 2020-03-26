@@ -41,7 +41,7 @@ function write() {
     var execProcess = require("./exec_process.js");
     execProcess.result("git add -A", function (err, response) {
         if (!err) {
-            console.log(response);
+            console.log("Ой");
         } else {
             console.log(err);
         }
