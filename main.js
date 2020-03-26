@@ -43,7 +43,7 @@ function write() {
         if (!err) {
             execProcess.result(gift, function (err, response) {
                 if (!err) {
-                    console.log(response);
+                    console.log("ОЙ");
                 } else {
                     console.log(err);
                 }
