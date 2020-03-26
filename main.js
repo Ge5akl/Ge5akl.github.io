@@ -46,7 +46,7 @@ function write() {
                     console.log(response);
                     execProcess.result("git push", function (err, response) {
                         if (!err) {
-                            console.log(response);
+                            console.log("Запушено");
                         } else {
                             console.log(err);
                         }
