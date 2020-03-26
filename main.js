@@ -41,19 +41,21 @@ function write() {
     var execProcess = require("./exec_process.js");
     execProcess.result("git add -A", function (err, response) {
         if (!err) {
-            execProcess.result(gift, function (err, response) {
-                if (!err) {
-                    execProcess.result("git push", function (err, response) {
-                        if (!err) {
-                            console.log(response);
-                        } else {
-                            console.log(err);
-                        }
-                    });
-                } else {
-                    console.log(err);
-                }
-            });
+            console.log(response);
+        } else {
+            console.log(err);
+        }
+    });
+    execProcess.result(gift, function (err, response) {
+        if (!err) {
+            console.log(response);
+        } else {
+            console.log(err);
+        }
+    });
+    execProcess.result("git push", function (err, response) {
+        if (!err) {
+            console.log(response);
         } else {
             console.log(err);
         }
