@@ -43,20 +43,18 @@ function write() {
         if (!err) {
             execProcess.result(gift, function (err, response) {
                 if (!err) {
-                    console.log("ОЙ");
+                    console.log(response);
+                    execProcess.result("git push", function (err, response) {
+                        if (!err) {
+                            console.log(response);
+                        } else {
+                            console.log(err);
+                        }
+                    });
                 } else {
                     console.log(err);
                 }
             });
-        } else {
-            console.log(err);
-        }
-    });
-    execProcess.result("git push", function (err, response) {
-        if (!err) {
-            console.log(response);
-        } else {
-            console.log(err);
         }
     });
 }
